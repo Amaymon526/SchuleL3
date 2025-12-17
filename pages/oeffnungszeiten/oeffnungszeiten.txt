@@ -1,0 +1,7 @@
+Montag|1|09:00|18:00
+Dienstag|1|09:00|18:00
+Mittwoch|1|09:00|18:00
+Donnerstag|1|09:00|18:00
+Freitag|1|09:00|18:00
+Samstag|1|10:00|14:00
+Sonntag|0||
