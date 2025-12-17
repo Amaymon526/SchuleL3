@@ -119,45 +119,26 @@ $produkte = [
     <title><?php echo $texte[$sprache]['titel']; ?></title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             background-color: <?php echo $themes[$theme]['bg']; ?>;
             color: <?php echo $themes[$theme]['text']; ?>;
             font-size: <?php echo $schriftgroessen[$schriftgroesse]; ?>;
-            transition: all 0.3s;
         }
         .box {
             background: <?php echo $themes[$theme]['box']; ?>;
             padding: 20px;
             margin: 15px 0;
-            border-radius: 5px;
         }
         button, a.button {
             padding: 10px 15px;
             margin: 5px;
-            cursor: pointer;
-            border: none;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
             display: inline-block;
-            border-radius: 3px;
-        }
-        button:hover, a.button:hover {
-            background: #0056b3;
-        }
-        .aktiv {
-            background: #28a745 !important;
         }
         .produkt-link {
             display: inline-block;
             padding: 10px;
             margin: 5px;
-            background: #6c757d;
-            color: white;
-            text-decoration: none;
-            border-radius: 3px;
         }
     </style>
 </head>

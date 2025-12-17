@@ -56,13 +56,12 @@ if (!isset($_SESSION['ip_adresse'])) {
     <meta charset="UTF-8">
     <title>Session & Cookie Sicherheit</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .box { border: 1px solid #ccc; padding: 20px; margin: 15px 0; }
-        .warning { background: #fff3cd; padding: 15px; margin: 10px 0; border-left: 4px solid #ffc107; }
-        .danger { background: #f8d7da; padding: 15px; margin: 10px 0; border-left: 4px solid #dc3545; }
-        .success { background: #d4edda; padding: 15px; margin: 10px 0; border-left: 4px solid #28a745; }
-        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
-        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; }
+        .box { padding: 20px; margin: 15px 0; }
+        .warning { padding: 15px; margin: 10px 0; }
+        .danger { padding: 15px; margin: 10px 0; }
+        .success { padding: 15px; margin: 10px 0; }
+        code { padding: 2px 6px; }
+        pre { padding: 15px; overflow-x: auto; }
     </style>
 </head>
 <body>

@@ -62,13 +62,11 @@ setcookie('letzter_besuch', date('Y-m-d H:i:s'), time() + (365 * 24 * 60 * 60), 
     <meta charset="UTF-8">
     <title>Cookie Grundlagen</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .message { background: #d4edda; padding: 10px; margin: 10px 0; }
-        .cookie-box { border: 1px solid #ccc; padding: 15px; margin: 10px 0; }
+        .message { padding: 10px; margin: 10px 0; }
+        .cookie-box { padding: 15px; margin: 10px 0; }
         button { padding: 10px; margin: 5px; }
         table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background: #f2f2f2; }
+        th, td { padding: 8px; }
     </style>
 </head>
 <body>

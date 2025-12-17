@@ -23,9 +23,8 @@ if (!isset($_SESSION['eingeloggt']) || $_SESSION['eingeloggt'] !== true) {
     <meta charset="UTF-8">
     <title>Geschützter Bereich</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .protected { background: #d4edda; padding: 20px; margin: 20px 0; }
-        .admin-only { background: #fff3cd; padding: 15px; margin: 10px 0; }
+        .protected { padding: 20px; margin: 20px 0; }
+        .admin-only { padding: 15px; margin: 10px 0; }
     </style>
 </head>
 <body>

@@ -65,14 +65,11 @@ if (!isset($_SESSION['test_variable'])) {
     <meta charset="UTF-8">
     <title>Session löschen</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .message { background: #d4edda; padding: 15px; margin: 10px 0; }
-        .box { border: 1px solid #ccc; padding: 20px; margin: 15px 0; }
-        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
-        .danger { background: #dc3545; color: white; }
-        .warning { background: #ffc107; }
-        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; }
-        code { background: #f4f4f4; padding: 2px 6px; }
+        .message { padding: 15px; margin: 10px 0; }
+        .box { padding: 20px; margin: 15px 0; }
+        button { padding: 10px 15px; margin: 5px; }
+        pre { padding: 15px; overflow-x: auto; }
+        code { padding: 2px 6px; }
     </style>
 </head>
 <body>

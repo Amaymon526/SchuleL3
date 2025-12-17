@@ -99,15 +99,12 @@ function anzahl_artikel() {
     <meta charset="UTF-8">
     <title>Warenkorb mit Sessions</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .message { background: #d4edda; padding: 10px; margin: 10px 0; }
+        .message { padding: 10px; margin: 10px 0; }
         .produkte { display: flex; flex-wrap: wrap; gap: 10px; }
-        .produkt { border: 1px solid #ccc; padding: 15px; width: 200px; }
-        .produkt button { background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; }
+        .produkt { padding: 15px; width: 200px; }
+        .produkt button { padding: 10px; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background: #f2f2f2; }
-        .gesamt { font-size: 20px; font-weight: bold; color: green; }
+        th, td { padding: 10px; }
         input[type="number"] { width: 60px; }
     </style>
 </head>

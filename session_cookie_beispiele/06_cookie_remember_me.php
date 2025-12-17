@@ -86,11 +86,10 @@ if (isset($_GET['logout'])) {
     <meta charset="UTF-8">
     <title>Remember Me - Login</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .success { color: green; padding: 10px; background: #d4edda; margin: 10px 0; }
-        .error { color: red; padding: 10px; background: #f8d7da; margin: 10px 0; }
-        .login-box { border: 1px solid #ccc; padding: 20px; max-width: 400px; }
-        .user-info { background: #e7f3ff; padding: 15px; margin: 10px 0; }
+        .success { padding: 10px; margin: 10px 0; }
+        .error { padding: 10px; margin: 10px 0; }
+        .login-box { padding: 20px; max-width: 400px; }
+        .user-info { padding: 15px; margin: 10px 0; }
         input[type="text"], input[type="password"] { width: 100%; padding: 8px; margin: 5px 0; }
         button { padding: 10px 20px; margin: 5px; }
         .remember { margin: 10px 0; }

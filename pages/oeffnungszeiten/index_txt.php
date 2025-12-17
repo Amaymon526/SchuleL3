@@ -108,146 +108,18 @@ $status = ist_jetzt_offen($zeiten);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Öffnungszeiten - TXT</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        .header h1 { font-size: 2em; margin-bottom: 10px; }
-        .status {
-            padding: 20px 30px;
-            font-size: 1.3em;
-            text-align: center;
-            font-weight: bold;
-            border-bottom: 3px solid #f0f0f0;
-        }
-        .status.offen {
-            background: #d4edda;
-            color: #155724;
-        }
-        .status.geschlossen {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        .content {
-            padding: 30px;
-        }
-        .message {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .tag-row {
-            background: #f8f9fa;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #f093fb;
-            transition: all 0.3s;
-        }
-        .tag-row:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateX(5px);
-        }
-        .tag-row.geschlossen {
-            opacity: 0.6;
-            border-left-color: #dc3545;
-        }
-        .tag-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .tag-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
-        }
-        .checkbox-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .checkbox-wrapper input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-        .zeit-inputs {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        .zeit-gruppe {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        input[type="time"] {
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border 0.3s;
-        }
-        input[type="time"]:focus {
-            outline: none;
-            border-color: #f093fb;
-        }
-        input[type="time"]:disabled {
-            background: #e9ecef;
-            cursor: not-allowed;
-        }
-        .button-group {
-            margin-top: 30px;
-            text-align: center;
-        }
-        button {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.1em;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        button:hover {
-            transform: scale(1.05);
-        }
-        .info {
-            margin-top: 20px;
-            padding: 15px;
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            border-radius: 5px;
-        }
-        .footer {
-            padding: 20px;
-            text-align: center;
-            background: #f8f9fa;
-            border-top: 1px solid #dee2e6;
-        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { padding: 20px; }
+        .status { padding: 15px; }
+        .content { padding: 20px; }
+        .message { padding: 10px; margin-bottom: 15px; }
+        .tag-row { padding: 15px; margin-bottom: 10px; }
+        .tag-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .checkbox-wrapper { display: flex; gap: 5px; }
+        .zeit-inputs { display: flex; gap: 10px; }
+        .zeit-gruppe { display: flex; gap: 5px; }
+        .button-group { margin-top: 20px; }
+        .footer { padding: 15px; }
     </style>
 </head>
 <body>
