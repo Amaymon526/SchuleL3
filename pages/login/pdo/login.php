@@ -1,0 +1,95 @@
+<?php
+// Datenbankverbindung aufbauen
+$host = 'localhost';
+$dbname = 'schule_db';
+$username = 'root';
+$password = '';
+
+try {
+    // PDO Objekt erstellen für Datenbankverbindung
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    // Fehlerbehandlung aktivieren
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Prüfen ob Tabelle existiert, sonst erstellen
+    $tableCheck = $pdo->query("SHOW TABLES LIKE 'users'");
+
+    if ($tableCheck->rowCount() == 0) {
+        // Tabelle existiert nicht, wird erstellt
+        $createTable = "CREATE TABLE users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(50) UNIQUE NOT NULL,
+            password VARCHAR(255) NOT NULL
+        )";
+        $pdo->exec($createTable);
+    }
+} catch(PDOException $e) {
+    die("Verbindung fehlgeschlagen: " . $e->getMessage());
+}
+
+$error = '';
+$success = '';
+
+// Prüfen ob Formular abgeschickt wurde
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Eingaben aus Formular holen
+    $user = $_POST['username'] ?? '';
+    $pass = $_POST['password'] ?? '';
+
+    // Prüfen ob beide Felder ausgefüllt sind
+    if (empty($user) || empty($pass)) {
+        $error = 'Bitte alle Felder ausfüllen';
+    } else {
+        // SQL Abfrage vorbereiten um Benutzer zu finden
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->execute([$user]);
+        $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Prüfen ob Benutzer existiert und Passwort stimmt
+        if ($userData && $userData['password'] === $pass) {
+            // Login erfolgreich
+            session_start();
+            $_SESSION['user_id'] = $userData['id'];
+            $_SESSION['username'] = $userData['username'];
+            $success = 'Login erfolgreich!';
+        } else {
+            $error = 'Falscher Benutzername oder Passwort';
+        }
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PDO</title>
+</head>
+<body>
+    <h2>Login (PDO ohne Hash)</h2>
+
+    <?php if ($error): ?>
+        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
+    <?php endif; ?>
+
+    <?php if ($success): ?>
+        <p style="color: green;"><?php echo htmlspecialchars($success); ?></p>
+    <?php endif; ?>
+
+    <form method="POST" action="">
+        <div>
+            <label>Benutzername:</label><br>
+            <input type="text" name="username" required>
+        </div>
+        <br>
+        <div>
+            <label>Passwort:</label><br>
+            <input type="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit">Einloggen</button>
+    </form>
+
+    <p>Noch kein Account? <a href="register.php">Hier registrieren</a></p>
+</body>
+</html>
